@@ -1,0 +1,36 @@
+{
+	"tagOwners": {
+		"tag:connector": ["autogroup:admin"],
+	},
+	"autoApprovers": {
+		"routes": {
+			"0.0.0.0/0": ["tag:connector"],
+			"::/0":      ["tag:connector"],
+		},
+	},
+	"acls": [
+		{"action": "accept", "src": ["*"], "dst": ["*:*"]},
+	],
+	"nodeAttrs": [
+		{
+			"target": ["*"],
+			"app": {
+				"tailscale.com/app-connectors": [
+					{
+						"name":       "ipchicken",
+						"connectors": ["tag:connector"],
+						"domains":    ["*.ipchicken.com"],
+					},
+				],
+			},
+		},
+	],
+    "ssh": [
+		{
+			"action": "check",
+			"src":    ["autogroup:member"],
+			"dst":    ["autogroup:self"],
+			"users":  ["autogroup:nonroot", "root"],
+		},
+	],
+}

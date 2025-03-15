@@ -1,0 +1,6 @@
+name: tailscale-app-connector
+description: A minimal AWS TypeScript Pulumi program
+runtime:
+  name: nodejs
+  options:
+    packagemanager: npm
