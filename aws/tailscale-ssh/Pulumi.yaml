@@ -1,0 +1,6 @@
+name: tailscale-ssh-demo
+description: A minimal AWS TypeScript Pulumi program
+runtime:
+  name: nodejs
+  options:
+    packagemanager: npm

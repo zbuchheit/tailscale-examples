@@ -1,0 +1,17 @@
+{
+    "name": "tailscale-ssh-demo",
+    "main": "index.ts",
+    "devDependencies": {
+        "@types/node": "^18",
+        "typescript": "^5.0.0"
+    },
+    "dependencies": {
+        "@pulumi/aws": "^6.0.0",
+        "@pulumi/awsx": "^2.21.0",
+        "@pulumi/cloudinit": "^1.4.11",
+        "@pulumi/command": "^1.0.1",
+        "@pulumi/pulumi": "^3.113.0",
+        "@pulumi/tailscale": "^0.17.5",
+        "@pulumi/tls": "^5.1.0"
+    }
+}

@@ -1,0 +1,47 @@
+{
+	"groups": {
+		"group:engineering": [
+			"me@zbchht.com"
+		],
+	},
+	"tagOwners": {
+		"tag:production": [
+			"group:engineering"
+		],
+	},
+	"acls": [
+		{
+			"action": "accept",
+			"src": [
+				"autogroup:member"
+			],
+			"dst": [
+				"autogroup:self:*"
+			]
+		},
+		{
+			"action": "accept",
+			"src": [
+				"group:engineering"
+			],
+			"dst": [
+				"tag:production:*"
+			]
+		}
+	],
+	"ssh": [
+		{
+			"action": "accept",
+			"src": [
+				"autogroup:member"
+			],
+			"dst": [
+				"autogroup:self"
+			],
+			"users": [
+				"autogroup:nonroot",
+				"root"
+			],
+		},
+	],
+}
