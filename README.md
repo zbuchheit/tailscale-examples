@@ -31,10 +31,6 @@ This repository contains examples of using Tailscale with Pulumi for infrastruct
     pulumi up
     ```
 
-## Examples
-
-- **Example 1**: Basic Tailscale App Connector setup with Pulumi
-
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request.
