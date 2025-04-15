@@ -1,0 +1,12 @@
+#cloud-config
+merge_how:
+ - name: list
+   settings: [append]
+ - name: dict
+   settings: [no_replace, recurse_list]
+
+package_update: true
+runcmd:
+  - ['sh', '-c', 'curl -fsSL https://tailscale.com/install.sh | sh']
+  - ['echo', '-e', '\n#\n# Tailscale installation Complete.\n#\n']
+  - sudo tailscale up --auth-key=TAILSCALE_AUTH_KEY TAILSCALE_UP_FLAGS 

@@ -1,0 +1,17 @@
+#cloud-config
+merge_how:
+ - name: list
+   settings: [append]
+ - name: dict
+   settings: [no_replace, recurse_list]
+
+runcmd:
+  - curl -sSL https://go.dev/dl/go1.24.1.linux-arm64.tar.gz | sudo tar -C /usr/local -xz
+  - ln -s /usr/local/go/bin/go /usr/bin/go
+  - mkdir -p /opt/go /tmp/go-mod-cache /tmp/go-cache
+  - export GOPATH=/opt/go
+  - export GOMODCACHE=/tmp/go-mod-cache
+  - export GOBIN=/usr/local/bin
+  - export GOCACHE=/tmp/go-cache
+  - /usr/bin/go install tailscale.com/cmd/derper@main
+  - ln -s /usr/local/bin/derper /usr/bin/derper

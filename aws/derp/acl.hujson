@@ -1,0 +1,62 @@
+{
+	"tagOwners": {
+		"tag:derp": [
+			"autogroup:admin"
+		],
+	},
+	"autoApprovers": {
+		"routes": {
+			"0.0.0.0/0": [
+				"tag:derp"
+			],
+			"::/0": [
+				"tag:derp"
+			],
+		},
+	},
+	"acls": [
+		{
+			"action": "accept",
+			"src": [
+				"autogroup:member"
+			],
+			"dst": [
+				"autogroup:self:*",
+				"tag:derp:*"
+			]
+		},
+	],
+	"derpMap": {
+		"Regions": {
+			"900": {
+				"RegionID":   900,
+				"RegionCode": "cstm",
+				"RegionName": "My Custom Derp",
+				"Nodes": [
+					{
+						"Name":     "derp",
+						"RegionID": 900,
+						"HostName": "DERP_HOSTNAME",
+						"IPv4": "DERP_SERVER_PUBLIC_IP"
+					},
+				],
+			},
+		},
+	},
+	"ssh": [
+		{
+			"action": "accept",
+			"src": [
+				"autogroup:member"
+			],
+			"dst": [
+				"tag:derp"
+			],
+			"users": [
+				"autogroup:nonroot",
+				"root",
+				"ubuntu"
+			],
+		},
+	],
+}
